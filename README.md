@@ -57,10 +57,10 @@
                       ],
             projects: [
               {
-                projectName: "Project 1",
+                projectName: "City of Brass",
                 projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
+                projectDescription: "A Fantasy game; fight monsters and collect treasure.",
+                projectRepo: "https://github.com/tjray-dev/city-of-brass",
                 projectDemo: "a loom link",
                 projectSite: "a link to the deployed site"
               },
