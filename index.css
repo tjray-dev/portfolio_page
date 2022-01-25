@@ -14,6 +14,7 @@
   background-color: rgba(115, 223, 139, 0.349);
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;
+  background-image: url("assets/background_image.jpeg")
 }
 .blurb{
   width: 200px;
@@ -26,18 +27,22 @@
   font-family: OCR A std, monospace;
   margin: 10px;
   text-align: center;
+  color: white;
 }
 .blurb#stack{
   position: absolute;
   top: 10px;
   left: 10px;
   font-family: OCR A std, monospace;
-  width: 100px;
+  width: 200px;
+  color: white;
 }
 .blurb#socials{
   position: absolute;
   bottom: 3px;
-  right: 5px;
+  right: 50px;
+  font-family: OCR A std, monospace;
+  color: white;
 }
 .socials{
   margin: 3px;
@@ -57,6 +62,7 @@
   border-bottom: 1px solid black;
   background-color: rgba(144, 82, 173, 0.459);
   overflow: auto;
+  justify-content: space-around;
 }
 .project{
   display: flex;
@@ -81,6 +87,12 @@
   margin-right:10px;
   text-decoration: none;
 }
+.sociallink{
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+}
 /* content styles */
 .about{
   margin: auto;
@@ -99,9 +111,4 @@
   height: 250px;
   width: 250px;
   border: 1px dashed black;
-}
-.footer{
-  height: 50px;
-  border-top: 1px solid black;
-  background-color: black;
 }
