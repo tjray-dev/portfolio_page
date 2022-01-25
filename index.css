@@ -71,7 +71,7 @@
   border-radius: 15px;
   margin: 7px;
   padding: 6px;
-  height: 275px;
+  /* height: 275px; */
   width: 275px;
   border: 1px solid black;
   background-color: #fff;
@@ -111,4 +111,7 @@
   height: 250px;
   width: 250px;
   border: 1px dashed black;
+}
+.description{
+  text-align: center;
 }
