@@ -5,8 +5,8 @@
     <title>tateray.com</title>
   </head>
   <body class="page" style="background-color:rgba(29, 157, 216, 0.726)">
-    <header class="heading">
-    </header>
+    <!-- <header class="heading">
+    </header> -->
     <div class="content">
       <div class="blurb" id="about">
         {{about}}
@@ -33,9 +33,9 @@
           {{project.projectDescription}}
         </p>
         <div class="navbar">
-          <a class="navlink" :href="project.projectRepo">GitHub</a>
-          <a class="navlink" :href="project.projectDemo">Demo</a>
-          <a class="navlink" :href="project.projectSite">Site</a>
+          <a v-if="project.projectRepo" class="navlink" :href="project.projectRepo">GitHub</a>
+          <a v-if="project.projeectDemo" class="navlink" :href="project.projectDemo">Demo</a>
+          <a v-if="project.projectSite" class="navlink" :href="project.projectSite">Site</a>
         </div>
       </div>
     </div>
@@ -59,11 +59,11 @@
               },
               {
                 name: "Reddit",
-                link: ""
+                link: "https://www.reddit.com/user/tjray_dev16"
               },
               {
                 name: "LinkedIn",
-                link: ""
+                link: "https://www.linkedin.com/in/tateray/"
               }
                       ],
             projects: [
@@ -72,16 +72,16 @@
                 projectThumbnail: "an image src",
                 projectDescription: "A Fantasy game; fight monsters and collect treasure.",
                 projectRepo: "https://github.com/tjray-dev/city-of-brass",
-                projectDemo: "a loom link",
+                projectDemo: "",
                 projectSite: "https://city-of-brass.herokuapp.com/"
               },
               {
-                projectName: "Growise",
+                projectName: "GroWise",
                 projectThumbnail: "an image src",
                 projectDescription: "A Grow Journal for hydroponic growers of all skills and stripes",
                 projectRepo: "https://github.com/RogueStateTechnologies/hydro",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
+                projectDemo: "",
+                projectSite: ""
               },
             ]
           }
