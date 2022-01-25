@@ -33,7 +33,7 @@
           {{project.projectDescription}}
         </p>
         <div class="navbar">
-          <a class="navlink" href={{project.projectRepo}}>GitHub</a>
+          <a class="navlink" :href="project.projectRepo">GitHub</a>
           <a class="navlink" href="project.projectDemo">Demo</a>
           <a class="navlink" href="project.projectSite">Site</a>
         </div>
@@ -72,54 +72,6 @@
                 projectDemo: "a loom link",
                 projectSite: "a link to the deployed site"
               },
-              {
-                projectName: "Project 3",
-                projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
-              },
-              {
-                projectName: "Project 3",
-                projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
-              },
-              {
-                projectName: "Project 3",
-                projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
-              },
-              {
-                projectName: "Project 3",
-                projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
-              },
-              {
-                projectName: "Project 3",
-                projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
-              },
-              {
-                projectName: "Project 3",
-                projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
-                projectDemo: "a loom link",
-                projectSite: "a link to the deployed site"
-              }
             ]
           }
         }
