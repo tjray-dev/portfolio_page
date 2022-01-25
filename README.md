@@ -33,7 +33,7 @@
           {{project.projectDescription}}
         </p>
         <div class="navbar">
-          <a class="navlink" href="project.projectRepo">GitHub</a>
+          <a class="navlink" href={{project.projectRepo}}>GitHub</a>
           <a class="navlink" href="project.projectDemo">Demo</a>
           <a class="navlink" href="project.projectSite">Site</a>
         </div>
@@ -65,10 +65,10 @@
                 projectSite: "a link to the deployed site"
               },
               {
-                projectName: "Project 2",
+                projectName: "Growise",
                 projectThumbnail: "an image src",
-                projectDescription: "This is a description of a project!",
-                projectRepo: "a github link",
+                projectDescription: "A Grow Journal for hydroponic growers of all skills and stripes",
+                projectRepo: "https://github.com/RogueStateTechnologies/hydro",
                 projectDemo: "a loom link",
                 projectSite: "a link to the deployed site"
               },
