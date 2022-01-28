@@ -2,7 +2,8 @@
 <html lang="en-US">
   <head>
     <link rel="stylesheet" href="index.css">
-    <title>tateray.com</title>
+    <script src="https://kit.fontawesome.com/0953c46818.js" crossorigin="anonymous"></script>
+    <title>Tate Ray | Portfolio</title>
   </head>
   <body class="page" style="background-color:rgba(29, 157, 216, 0.726)">
     <!-- <header class="heading">
@@ -14,7 +15,7 @@
       <div class="blurb" id="stack">
         <h5>What I've been working with lately...</h5>
         <ul class="listing" id="stack">
-          <li class="listItem" id="tech" v-for="tech in techStack">{{tech}}</li>
+          <li class="listItem" id="tech" v-for="tech in techStack"> <i :class="tech.icon"></i> {{tech.tech}}</li>
         </ul>
       </div>
       <div class="blurb" id="socials">
@@ -45,12 +46,28 @@
         data(){
           return{
             // Need to rewrite this about. Be more verbose. This should be where I tell my story. Sell Myself. 
-            about: "Hi, My name is Tate. Welcome to my site. I'm a Full Stack Software Engineer just beginning my journey as a developer.",
-            techStack: [ "HTML",
-                         "CSS",
-                         "Ruby",
-                         "JavaScript",
-                         "Vue",
+            about: "My name is Tate Ray, Full Stack Software Engineer and this is my portfolio. While I specialize in Ruby and the Rails framework I am experienced in a variety of Web Development technologies. My current project is GroWise, a Full Stack Rails application. It utilizes the Devise gem and ActionMailer. ",
+            techStack: [ 
+                        {
+                          icon: "fab fa-html5",
+                          tech: "HTML"
+                        },
+                        {
+                          icon: "fab fa-css3",
+                          tech: "CSS"
+                        },
+                        {
+                          icon: "",
+                          tech: "Rails"
+                        },
+                        {
+                          icon: "fab fa-js",
+                          tech: "JavaScript"
+                        },
+                        {
+                          icon: "fab fa-vuejs",
+                          tech: "Vue.js"
+                        }
                         ],
             socials: [ 
               {

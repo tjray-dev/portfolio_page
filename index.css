@@ -23,11 +23,12 @@
   position: absolute;
   top: 30%;
   left: 25%;
-  width: 30%;
+  width: 45%;
   font-family: OCR A std, monospace;
   margin: 10px;
   text-align: center;
   color: white;
+  text-shadow: black 3px 3px;
 }
 .blurb#stack{
   position: absolute;
