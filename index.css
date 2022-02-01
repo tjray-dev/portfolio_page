@@ -11,10 +11,9 @@
   position: relative;
   height: 600px;
   border-bottom: 1px solid black;
-  background-color: rgba(115, 223, 139, 0.349);
+  background-color: rgb(30, 96, 145);
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;
-  background-image: url("assets/background_image.jpeg")
 }
 .blurb#about{
   position: absolute;
@@ -24,8 +23,8 @@
   font-family: Optima, sans-serif;
   margin: 10px;
   text-align: center;
-  color: white;
-  text-shadow: black 3px 3px;
+  color: rgb(82, 182, 154);
+  /* text-shadow: rgb(82, 182, 154) 3px 3px; */
   font-size: large;
 }
 .blurb#socials{
@@ -33,14 +32,12 @@
   bottom: 3px;
   right: 50px;
   font-family: Optima, sans-serif;
-  color: white;
+  color: rgb(82, 182, 154);
 }
 .socials{
   margin: 3px;
+  color: rgb(82, 182, 154);
 
-}
-.listing#stack{
-  list-style: none;
 }
 .listItem#tech{
   margin-top: 5px;
@@ -52,7 +49,7 @@
   margin-top: 5px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  background-color: rgba(144, 82, 173, 0.459);
+  background-color: rgba(118, 200, 147);
   overflow: auto;
   justify-content: space-around;
 }
@@ -83,7 +80,7 @@
   margin-left: 10px;
   margin-right: 10px;
   text-decoration: none;
-  color: white;
+  color:  rgb(181, 228, 140);
 }
 /* content styles */
 .about{
@@ -117,4 +114,8 @@
   height: 25px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+}
+.pages{
+  display: flex;
+  justify-content: space-around;
 }
