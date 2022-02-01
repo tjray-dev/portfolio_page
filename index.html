@@ -3,27 +3,28 @@
   <head>
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/0953c46818.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <title>Tate Ray | Portfolio</title>
   </head>
   <body class="page" style="background-color:rgba(29, 157, 216, 0.726)">
-    <!-- <header class="heading">
-    </header> -->
     <div class="content">
       <div class="blurb" id="about">
         {{about}}
       </div>
-      <div class="blurb" id="stack">
-        <h5>What I've been working with lately...</h5>
-        <ul class="listing" id="stack">
-          <li class="listItem" id="tech" v-for="tech in techStack"> <i :class="tech.icon"></i> {{tech.tech}}</li>
-        </ul>
-      </div>
       <div class="blurb" id="socials">
           <h5>The Socials</h5>
           <div class="navbar">
-            <a class="sociallink" v-for="social in socials" :href="social.link">{{social.name}}</a>
+            <a class="sociallink" v-for="social in socials" :href="social.link">
+              <span class="iconify" :data-icon="social.icon"></span>
+              {{social.name}}
+            </a>
           </div>
       </div>
+    </div>
+    <div class="techBar">
+      <li class="listItem" id="tech" v-for="tech in techStack">
+        <span class="iconify" :data-icon="tech.icon"></span> {{tech.name}}
+      </li>
     </div>
     <div class="projects">
       <div v-for="project in projects" class="project" :key="project.index">
@@ -35,7 +36,7 @@
         </p>
         <div class="navbar">
           <a v-if="project.projectRepo" class="navlink" :href="project.projectRepo">GitHub</a>
-          <a v-if="project.projeectDemo" class="navlink" :href="project.projectDemo">Demo</a>
+          <a v-if="project.projectDemo" class="navlink" :href="project.projectDemo">Demo</a>
           <a v-if="project.projectSite" class="navlink" :href="project.projectSite">Site</a>
         </div>
       </div>
@@ -48,37 +49,67 @@
             // Need to rewrite this about. Be more verbose. This should be where I tell my story. Sell Myself. 
             about: "My name is Tate Ray, Full Stack Software Engineer and this is my portfolio. While I specialize in Ruby and the Rails framework I am experienced in a variety of Web Development technologies. My current project is GroWise, a Full Stack Rails application. It utilizes the Devise gem and ActionMailer. ",
             techStack: [ 
-                        {
-                          icon: "fab fa-html5",
-                          tech: "HTML"
-                        },
-                        {
-                          icon: "fab fa-css3",
-                          tech: "CSS"
-                        },
-                        {
-                          icon: "",
-                          tech: "Rails"
-                        },
-                        {
-                          icon: "fab fa-js",
-                          tech: "JavaScript"
-                        },
-                        {
-                          icon: "fab fa-vuejs",
-                          tech: "Vue.js"
-                        }
+              {
+                icon: "icomoon-free:html-five2",
+                name: "HTML"
+              },
+              {
+                icon: "bx:bxl-css3",
+                name: "CSS"
+              },
+              {
+                icon: "cib:rails",
+                name: "Rails"
+              },
+              {
+                icon: "akar-icons:javascript-fill",
+                name: "JavaScript"
+              },
+              {
+                icon: "akar-icons:vue-fill",
+                name: "Vue.js"
+              },
+              {
+                icon: "fa-brands:git",
+                name: "Git"
+              },
+              {
+                icon: "akar-icons:react-fill",
+                name: "React"
+              },
+              {
+                icon: "akar-icons:redux-fill",
+                name: "Redux"
+              },
+              {
+                icon: "cib:typescript",
+                name: "TypeScript"
+              },
+              {
+                icon: "bx:bxl-tailwind-css",
+                name: "Tailwind"
+              },
+              {
+                icon: "mdi:bulma",
+                name: "Bulma"
+              },
+              {
+
+              }
                         ],
             socials: [ 
               {
+                icon: "brandico:twitter",
                 name: "Twitter",
                 link: "https://twitter.com/tjray_dev",
               },
               {
+                icon: "cib:reddit-alt",
                 name: "Reddit",
                 link: "https://www.reddit.com/user/tjray_dev16"
               },
               {
+                icon: "akar-icons:linkedin-fill",
                 name: "LinkedIn",
                 link: "https://www.linkedin.com/in/tateray/"
               }
@@ -98,6 +129,14 @@
                 projectDescription: "A Grow Journal for hydroponic growers of all skills and stripes",
                 projectRepo: "https://github.com/RogueStateTechnologies/hydro",
                 projectDemo: "",
+                projectSite: ""
+              },
+              {
+                projectName: "Bit Book",
+                projectThumbnail: "",
+                projectDescription: "An index of top performing Cryptocurrencies",
+                projectRepo: "https://github.com/tjray-dev/phase-1-project",
+                projectDemo: "https://www.loom.com/share/03fc2a7a1b974ed282d38f977e52632c",
                 projectSite: ""
               },
             ]

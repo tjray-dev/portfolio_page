@@ -16,33 +16,23 @@
   border-bottom-right-radius: 2%;
   background-image: url("assets/background_image.jpeg")
 }
-.blurb{
-  width: 200px;
-}
 .blurb#about{
   position: absolute;
   top: 30%;
   left: 25%;
   width: 45%;
-  font-family: OCR A std, monospace;
+  font-family: Optima, sans-serif;
   margin: 10px;
   text-align: center;
   color: white;
   text-shadow: black 3px 3px;
-}
-.blurb#stack{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-family: OCR A std, monospace;
-  width: 200px;
-  color: white;
+  font-size: large;
 }
 .blurb#socials{
   position: absolute;
   bottom: 3px;
   right: 50px;
-  font-family: OCR A std, monospace;
+  font-family: Optima, sans-serif;
   color: white;
 }
 .socials{
@@ -53,8 +43,9 @@
   list-style: none;
 }
 .listItem#tech{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .projects{
   display: flex;
@@ -115,4 +106,15 @@
 }
 .description{
   text-align: center;
+}
+.techBar{
+  display: flex;
+  justify-content: space-around;
+  font-family: Optima, sans-serif;
+  list-style: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 25px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
