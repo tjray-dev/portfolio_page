@@ -6,23 +6,23 @@
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <title>Tate Ray | Portfolio</title>
   </head>
-  <body class="page" style="background-color: rgb(217, 237, 146)">
-    <header class="pages">
-      <a class="pagelink">ABOUT</a>
-      <a class="pagelink">WORK</a>
-    </header>
+  <body class="page">
     <div class="content">
-      <div class="blurb" id="about">
-        {{about}}
+        <h1 class="head" id="name" >{{about.name}}</h1>
+        <h2 class="head" id="jobTitle" >{{about.jobTitle}}</h2>
+        <img class="about" id="image" src="assets/IMG-0252.jpg"></img>
+      <div class="about" id="history">
+        <h4>A bit about me...</h4>
+        <span class="history" id="first"  >{{about.historyP1}}</span>
+        <span class="history" id="second" >{{about.historyP2}}</span>
+        <span class="history" id="third"  >{{about.historyP3}}</span>
+        <span class="history" id="fourth" >{{about.historyP4}}</span>
       </div>
-      <div class="blurb" id="socials">
-          <h5>The Socials</h5>
-          <div class="navbar">
-            <a class="sociallink" v-for="social in socials" :href="social.link">
-              <span class="iconify" :data-icon="social.icon"></span>
-              {{social.name}}
-            </a>
-          </div>
+      <div class="about" id="social">
+          <a class="link" :id="social.name" v-for="social in socials" :href="social.link">
+            <span class="iconify" :data-icon="social.icon"></span>
+            {{social.name}}
+          </a>
       </div>
     </div>
     <div class="techBar">
@@ -49,9 +49,15 @@
     <script>
       Vue.createApp({
         data(){
-          return{
-            // Need to rewrite this about. Be more verbose. This should be where I tell my story. Sell Myself. 
-            about: "My name is Tate Ray, Full Stack Software Engineer and this is my portfolio. While I specialize in Ruby and the Rails framework I am experienced in a variety of Web Development technologies. My current project is GroWise, a Full Stack Rails application. It utilizes the Devise gem and ActionMailer. ",
+          return{ 
+            about: {
+              name: "Tate Ray",
+              jobTitle: "Software Engineer",
+              historyP1: "My professional life began with a career in food service. I was drawn to the industry because I admired the craftsmanship and dedication it took to create great food. After five years in the kitchen, I began to consider a career change…then the Covid-19 pandemic hit.",
+              historyP2: "With the free time it imposed, I began learning how to code and  eventually enrolled in Flatiron School’s Software Engineering Course. Coding had been in the background for much of my life; something I grew up around but never fully appreciated. However, when I began teaching myself how to code, I quickly found I enjoyed the challenge of it. In coding, I discovered a craft that required the same level of dedication to master as cooking did, while also allowing me to build lasting products that can make a real difference in people's lives.",
+              historyP3: "Recently, I have been working on a hydroponic grow journal app. It's a Monolith Rails App implementing the Devise gem for user Authentication and Authorization. It also utilizes ActionMail and sidekiq to perform automated email notifications for the app. The end goal of the app is to provide a lightweight cross-browser and cross-device application that allows hydroponics enthusiasts to track the health and yields of their plants.",
+              historyP4: "To further refine my skills as a developer I’ve  been learning Vue.js, as well as reading The Pragmatic Programmer to learn better habits to make me a more efficient and well-rounded Software Engineer."
+            },
             techStack: [ 
               {
                 icon: "icomoon-free:html-five2",
@@ -98,26 +104,36 @@
                 name: "Bulma"
               },
               {
-
-              }
-                        ],
+                icon: "cib:postgresql",
+                name: "PostgreSQL"
+              },
+              {
+                icon: "file-icons:chartjs",
+                name: "Chart.js"
+              },
+            ],
             socials: [ 
               {
                 icon: "brandico:twitter",
-                name: "Twitter",
+                name: "twitter",
                 link: "https://twitter.com/tjray_dev",
               },
               {
                 icon: "cib:reddit-alt",
-                name: "Reddit",
+                name: "reddit",
                 link: "https://www.reddit.com/user/tjray_dev16"
               },
               {
                 icon: "akar-icons:linkedin-fill",
-                name: "LinkedIn",
+                name: "linkedIn",
                 link: "https://www.linkedin.com/in/tateray/"
-              }
-                      ],
+              },
+              {
+                icon: "brandico:github",
+                name: "gitHub",
+                link: "https://github.com/tjray-dev"
+              },
+            ],
             projects: [
               {
                 projectName: "City of Brass",
@@ -136,11 +152,11 @@
                 projectSite: ""
               },
               {
-                projectName: "Bit Book",
+                projectName: "Music TO You",
                 projectThumbnail: "",
-                projectDescription: "An index of top performing Cryptocurrencies",
-                projectRepo: "https://github.com/tjray-dev/phase-1-project",
-                projectDemo: "https://www.loom.com/share/03fc2a7a1b974ed282d38f977e52632c",
+                projectDescription: "A music playlist App",
+                projectRepo: "https://github.com/tjray-dev/musicTOyou",
+                projectDemo: "",
                 projectSite: ""
               },
             ]

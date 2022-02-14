@@ -1,4 +1,8 @@
 /* navigation styles */
+.page{
+  color: rgb(0, 41, 39);
+  background-color: rgb(81, 13, 10);
+}
 .heading{
   font-family: monospace;
   height: 30px;
@@ -9,35 +13,37 @@
 }
 .content{
   position: relative;
-  height: 600px;
+  height: 1000px;
+  background-color: rgb(94, 116, 127);
   border-bottom: 1px solid black;
-  background-color: rgb(30, 96, 145);
   border-bottom-left-radius: 2%;
   border-bottom-right-radius: 2%;
 }
-.blurb#about{
+.about{
   position: absolute;
-  top: 30%;
-  left: 25%;
-  width: 45%;
-  font-family: Optima, sans-serif;
-  margin: 10px;
-  text-align: center;
-  color: rgb(82, 182, 154);
-  /* text-shadow: rgb(82, 182, 154) 3px 3px; */
-  font-size: large;
 }
-.blurb#socials{
-  position: absolute;
-  bottom: 3px;
+.about#image{
+  height: 350px;
+  width: 350px;
   right: 50px;
-  font-family: Optima, sans-serif;
-  color: rgb(82, 182, 154);
+  top: 100px;
+  border-radius: 50%;
 }
-.socials{
-  margin: 3px;
-  color: rgb(82, 182, 154);
-
+.about#history{
+  font-size: large;
+  width: 700px;
+  left: 40px;
+  top: 250px;
+}
+.about#social{
+  display: flex;
+  right: 10px;
+  bottom: 10px;
+}
+.link{
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(0, 41, 39)
 }
 .listItem#tech{
   margin-top: 5px;
@@ -49,9 +55,10 @@
   margin-top: 5px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  background-color: rgba(118, 200, 147);
+  background-color: rgb(94, 116, 127);
   overflow: auto;
   justify-content: space-around;
+  font-family: Optima, sans-serif;
 }
 .project{
   display: flex;
@@ -63,59 +70,39 @@
   /* height: 275px; */
   width: 275px;
   border: 1px solid black;
-  background-color: #fff;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.479);
+  background: rgb(195, 223, 224);
+  box-shadow: 3px 3px rgb(0, 0, 0, 0.479);
 
-}
-.navbar{
-  display: flex;
-  justify-content: space-around;
-}
-.navlink{
-  margin-left: 10px;
-  margin-right:10px;
-  text-decoration: none;
-}
-.sociallink{
-  margin-left: 10px;
-  margin-right: 10px;
-  text-decoration: none;
-  color:  rgb(181, 228, 140);
-}
-/* content styles */
-.about{
-  margin: auto;
-  margin-top: 25px;
-  padding: 10px;
-  padding-top: 250px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
-  align-items: center;
-}
-.projects{
-  font-family: Optima, sans-serif;
-}
-.thumbnail{
-  height: 250px;
-  width: 250px;
-  border: 1px dashed black;
 }
 .description{
   text-align: center;
 }
 .techBar{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: Optima, sans-serif;
   list-style: none;
-  margin-top: 5px;
+  margin-top: 50px;
   margin-bottom: 5px;
   height: 25px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  overflow: auto;
+  background: rgb(195, 223, 224);
 }
-.pages{
-  display: flex;
-  justify-content: space-around;
+.history{
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.head{
+  position: absolute;
+}
+.head#name{
+  top: 60px;
+  right: 550px;
+}
+.head#jobTitle{
+  top: 150px;
+  right: 400px;
 }
