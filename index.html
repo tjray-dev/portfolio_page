@@ -24,6 +24,10 @@
             {{social.name}}
           </a>
       </div>
+      <div class="experiment">
+        <button @click="timesClicked" class="btn">Click Me!</button>
+        <h3>{{count}}</h3>
+      </div>
     </div>
     <div class="techBar">
       <li class="listItem" id="tech" v-for="tech in techStack">
@@ -35,13 +39,18 @@
         <h4><u>{{project.projectName}}</u></h4>
         <div>
         </div>
-        <p class="description">
-          {{project.projectDescription}}
-        </p>
-        <div class="navbar">
-          <a v-if="project.projectRepo" class="navlink" :href="project.projectRepo">GitHub</a>
-          <a v-if="project.projectDemo" class="navlink" :href="project.projectDemo">Demo</a>
-          <a v-if="project.projectSite" class="navlink" :href="project.projectSite">Site</a>
+        <div @click="">
+          <p class="description">
+            {{project.projectDescription}}
+          </p>
+        </div>
+        <div class="projectlinks">
+            <a v-if="project.projectRepo" class="navlink" 
+               :href="project.projectRepo">GitHub</a>
+            <a v-if="project.projectDemo" class="navlink" 
+               :href="project.projectDemo">Demo</a>
+            <a v-if="project.projectSite" class="navlink" 
+               :href="project.projectSite">Site</a>
         </div>
       </div>
     </div>
@@ -141,7 +150,8 @@
                 projectDescription: "A Fantasy game; fight monsters and collect treasure.",
                 projectRepo: "https://github.com/tjray-dev/city-of-brass",
                 projectDemo: "",
-                projectSite: "https://city-of-brass.herokuapp.com/"
+                projectSite: "https://city-of-brass.herokuapp.com/",
+                cssId: ""
               },
               {
                 projectName: "GroWise",
@@ -159,8 +169,14 @@
                 projectDemo: "",
                 projectSite: ""
               },
-            ]
-          }
+            ],
+            count: 0
+            }
+          },
+          methods:{
+              timesClicked(){
+                this.count += 1
+              }
         }
       })
       .mount('.page')

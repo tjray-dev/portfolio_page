@@ -1,15 +1,8 @@
 /* navigation styles */
 .page{
-  color: rgb(0, 41, 39);
+  color: rgb(1, 15, 15);
   background-color: rgb(81, 13, 10);
-}
-.heading{
-  font-family: monospace;
-  height: 30px;
-  padding: 6px;
-  border-bottom: 1px solid black;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
+  font-family: Optima, sans-serif;
 }
 .content{
   position: relative;
@@ -58,7 +51,7 @@
   background-color: rgb(94, 116, 127);
   overflow: auto;
   justify-content: space-around;
-  font-family: Optima, sans-serif;
+  /* font-family: Optima, sans-serif; */
 }
 .project{
   display: flex;
@@ -80,7 +73,7 @@
 .techBar{
   display: flex;
   justify-content: space-between;
-  font-family: Optima, sans-serif;
+  /* font-family: Optima, sans-serif; */
   list-style: none;
   margin-top: 50px;
   margin-bottom: 5px;
@@ -105,4 +98,23 @@
 .head#jobTitle{
   top: 150px;
   right: 400px;
+}
+.navlink{
+  margin: 3px;
+}
+.description{
+  height: 50px;
+}
+.experiment{
+  border: 1px solid black;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 2px 2px black;
+  position: absolute;
+  bottom: 200px;
+  right: 150px;
+}
+.btn{
+  color: pink;
+  background-color: black;
 }
