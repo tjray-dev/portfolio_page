@@ -20,6 +20,9 @@
             <li class="nav-item">
               <a class="nav-link" href="mailto:tate@tateray.com">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="showProjects">Work</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Find Me Online
@@ -33,12 +36,13 @@
       </div>
     </nav>
     <div class="content">
-        <h1 class="head" id="name" >{{about.name}}</h1>
+        <h1 class="head" id="name"     >{{about.name}}</h1>
         <h2 class="head" id="jobTitle" >{{about.jobTitle}}</h2>
+        <h3 class="head" id="location" >Located in: {{about.location}}</h3>
         <img class="about" id="image" src="assets/IMG-0252.jpg"></img>
       <div class="about">
         <h4 class="about" id="heading">A bit about me...</h4>
-        <div class="about bg-info" id="history">
+        <div class="about" id="history">
           <span class="history" id="first"  >{{about.historyP1}}</span>
           <span class="history" id="second" >{{about.historyP2}}</span>
           <span class="history" id="third"  >{{about.historyP3}}</span>
@@ -52,7 +56,7 @@
       </div>
     </div>
     <div class="projects">
-      <div v-for="project in projects" class="project" :key="project.index">
+      <div v-for="project in projects" class="project" :id="project.cssId" :key="project.index">
         <h4><u>{{project.name}}</u></h4>
         <div>
         </div>
@@ -76,6 +80,7 @@
             about: {
               name: "Tate Ray",
               jobTitle: "Software Engineer",
+              location: "Denver, Colorado",
               historyP1: "My professional life began with a career in food service. I was drawn to the industry because I admired the craftsmanship and dedication it took to create great food. After five years in the kitchen, I began to consider a career change…then the Covid-19 pandemic hit.",
               historyP2: "With the free time it imposed, I began learning how to code and  eventually enrolled in Flatiron School’s Software Engineering Course. Coding had been in the background for much of my life; something I grew up around but never fully appreciated. However, when I began teaching myself how to code, I quickly found I enjoyed the challenge of it. In coding, I discovered a craft that required the same level of dedication to master as cooking did, while also allowing me to build lasting products that can make a real difference in people's lives.",
               historyP3: "Recently, I have been working on a hydroponic grow journal app. It's a Monolith Rails App implementing the Devise gem for user Authentication and Authorization. It also utilizes ActionMail and sidekiq to perform automated email notifications for the app. The end goal of the app is to provide a lightweight cross-browser and cross-device application that allows hydroponics enthusiasts to track the health and yields of their plants.",
@@ -165,7 +170,7 @@
                 repo: "https://github.com/tjray-dev/city-of-brass",
                 demo: "",
                 site: "https://city-of-brass.herokuapp.com/",
-                cssId: ""
+                cssId: "hidden"
               },
               {
                 name: "GroWise",
@@ -173,7 +178,8 @@
                 description: "A Grow Journal for hydroponic growers of all skills and stripes",
                 repo: "https://github.com/RogueStateTechnologies/hydro",
                 demo: "",
-                site: ""
+                site: "",
+                cssId: "hidden"
               },
               {
                 name: "Music TO You",
@@ -181,15 +187,18 @@
                 description: "A music playlist App",
                 repo: "https://github.com/tjray-dev/musicTOyou",
                 demo: "",
-                site: ""
+                site: "",
+                cssId: "hidden"
               },
             ],
             count: 0
             }
           },
           methods:{
-              timesClicked(){
-                this.count += 1
+              showProjects(){
+               for(let i = 0; i < this.projects.length; i++){
+                 this.projects[i].cssId = ""
+               }
               }
         }
       })
