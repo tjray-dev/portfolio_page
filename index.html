@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/0953c46818.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tate Ray | Portfolio</title>
   </head>
   <body class="page">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Tate's Portfolio</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:tate@tateray.com">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Find Me Online
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li :id="social.name" v-for="social in socials"><a class="dropdown-item" :href="social.link">{{social.name}}</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="content">
         <h1 class="head" id="name" >{{about.name}}</h1>
         <h2 class="head" id="jobTitle" >{{about.jobTitle}}</h2>
         <img class="about" id="image" src="assets/IMG-0252.jpg"></img>
-      <div class="about" id="history">
-        <h4>A bit about me...</h4>
-        <span class="history" id="first"  >{{about.historyP1}}</span>
-        <span class="history" id="second" >{{about.historyP2}}</span>
-        <span class="history" id="third"  >{{about.historyP3}}</span>
-        <span class="history" id="fourth" >{{about.historyP4}}</span>
+      <div class="about">
+        <h4 class="about" id="heading">A bit about me...</h4>
+        <div class="about bg-info" id="history">
+          <span class="history" id="first"  >{{about.historyP1}}</span>
+          <span class="history" id="second" >{{about.historyP2}}</span>
+          <span class="history" id="third"  >{{about.historyP3}}</span>
+          <span class="history" id="fourth" >{{about.historyP4}}</span>
+        </div>
       </div>
-      <div class="about" id="social">
-          <a class="link" :id="social.name" v-for="social in socials" :href="social.link">
-            <span class="iconify" :data-icon="social.icon"></span>
-            {{social.name}}
-          </a>
+      <div class="techBar">
+        <li class="listItem" id="tech" v-for="tech in techStack">
+          <span class="iconify" :data-icon="tech.icon"></span> {{tech.name}}
+        </li>
       </div>
-      <div class="experiment">
-        <button @click="timesClicked" class="btn">Click Me!</button>
-        <h3>{{count}}</h3>
-      </div>
-    </div>
-    <div class="techBar">
-      <li class="listItem" id="tech" v-for="tech in techStack">
-        <span class="iconify" :data-icon="tech.icon"></span> {{tech.name}}
-      </li>
     </div>
     <div class="projects">
       <div v-for="project in projects" class="project" :key="project.index">
-        <h4><u>{{project.projectName}}</u></h4>
+        <h4><u>{{project.name}}</u></h4>
         <div>
         </div>
-        <div @click="">
+        <div>
           <p class="description">
-            {{project.projectDescription}}
+            {{project.description}}
           </p>
-        </div>
-        <div class="projectlinks">
-            <a v-if="project.projectRepo" class="navlink" 
-               :href="project.projectRepo">GitHub</a>
-            <a v-if="project.projectDemo" class="navlink" 
-               :href="project.projectDemo">Demo</a>
-            <a v-if="project.projectSite" class="navlink" 
-               :href="project.projectSite">Site</a>
+          <div id="links">
+            <a :id="project.repo" v-if="project.repo" :href="project.repo"><span class="iconify" data-icon="brandico:github"></span></a>
+            <a :id="project.repo" v-if="project.site" :href="project.site"><span class="iconify" data-icon="mdi:web"></span></a>
+            <a :id="project.repo" v-if="project.demo" :href="project.demo"><span class="iconify" data-icon="bi:camera-video"></span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -124,50 +138,50 @@
             socials: [ 
               {
                 icon: "brandico:twitter",
-                name: "twitter",
+                name: "Twitter",
                 link: "https://twitter.com/tjray_dev",
               },
               {
                 icon: "cib:reddit-alt",
-                name: "reddit",
+                name: "Reddit",
                 link: "https://www.reddit.com/user/tjray_dev16"
               },
               {
                 icon: "akar-icons:linkedin-fill",
-                name: "linkedIn",
+                name: "LinkedIn",
                 link: "https://www.linkedin.com/in/tateray/"
               },
               {
                 icon: "brandico:github",
-                name: "gitHub",
+                name: "GitHub",
                 link: "https://github.com/tjray-dev"
               },
             ],
             projects: [
               {
-                projectName: "City of Brass",
-                projectThumbnail: "an image src",
-                projectDescription: "A Fantasy game; fight monsters and collect treasure.",
-                projectRepo: "https://github.com/tjray-dev/city-of-brass",
-                projectDemo: "",
-                projectSite: "https://city-of-brass.herokuapp.com/",
+                name: "City of Brass",
+                thumbnail: "an image src",
+                description: "A Fantasy game; fight monsters and collect treasure.",
+                repo: "https://github.com/tjray-dev/city-of-brass",
+                demo: "",
+                site: "https://city-of-brass.herokuapp.com/",
                 cssId: ""
               },
               {
-                projectName: "GroWise",
-                projectThumbnail: "an image src",
-                projectDescription: "A Grow Journal for hydroponic growers of all skills and stripes",
-                projectRepo: "https://github.com/RogueStateTechnologies/hydro",
-                projectDemo: "",
-                projectSite: ""
+                name: "GroWise",
+                thumbnail: "an image src",
+                description: "A Grow Journal for hydroponic growers of all skills and stripes",
+                repo: "https://github.com/RogueStateTechnologies/hydro",
+                demo: "",
+                site: ""
               },
               {
-                projectName: "Music TO You",
-                projectThumbnail: "",
-                projectDescription: "A music playlist App",
-                projectRepo: "https://github.com/tjray-dev/musicTOyou",
-                projectDemo: "",
-                projectSite: ""
+                name: "Music TO You",
+                thumbnail: "",
+                description: "A music playlist App",
+                repo: "https://github.com/tjray-dev/musicTOyou",
+                demo: "",
+                site: ""
               },
             ],
             count: 0
@@ -181,5 +195,6 @@
       })
       .mount('.page')
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
